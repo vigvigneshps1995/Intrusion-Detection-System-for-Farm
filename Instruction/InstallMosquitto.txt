@@ -1,0 +1,28 @@
+
+Build Mosquitto From Source
+	sudo apt-get install libwrap0-dev libssl-dev libc-ares-dev uuid-dev 
+	cd Project/Resource/Mosquitto
+	sudo make
+	sudo make install
+	sudo mkdir /var/lib/mosquitto/ /etc/mosquitto/
+
+
+Configuring the MQTT Broker
+	sudo gedit /etc/mosquitto/mosquitto.conf
+	listener 1883 192.168.2.103  - (CHANGE IP HERE)
+	persistence true
+	persistence_location /var/lib/mosquitto/
+	persistence_file mosquitto.db
+	log_dest syslog
+	log_dest stdout
+	log_dest topic
+	log_type error
+	log_type warning
+	log_type notice
+	log_type information
+	connection_messages true
+	log_timestamp true
+	allow_anonymous true
+	
+Start Broker 
+	mosquitto -c /etc/mosquitto/mosquitto.conf

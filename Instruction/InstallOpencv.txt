@@ -1,0 +1,40 @@
+
+1. open a terminal and type 
+	[compiler] sudo apt-get install build-essential
+	[required] sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+	[optional] sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-de
+
+2. unzip the opencv-master 
+3. make a new folder inside the unzipped file and name it build
+4. enter the build folder
+5. type 
+	cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+	
+	cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_IPP=OFF -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-master/modules -D  CMAKE_INSTALL_PREFIX=/usr/local ..
+	make 
+	sudo make install
+6. type
+	sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
+    	sudo ldconfig
+
+7. header files to include
+
+	#include "opencv2/core/core_c.h"
+	#include "opencv2/core/core.hpp"
+	#include "opencv2/flann/miniflann.hpp"
+	#include "opencv2/imgproc/imgproc_c.h"
+	#include "opencv2/imgproc/imgproc.hpp"
+	#include "opencv2/video/video.hpp"
+	#include "opencv2/features2d/features2d.hpp"
+	#include "opencv2/objdetect/objdetect.hpp"
+	#include "opencv2/calib3d/calib3d.hpp"
+	#include "opencv2/ml/ml.hpp"
+	#include "opencv2/highgui/highgui_c.h"
+	#include "opencv2/highgui/highgui.hpp"
+	#include "opencv2/contrib/contrib.hpp"
+ 
+
+7. to run the program
+	g++ ocv.cpp -o x `pkg-config --libs opencv` `pkg-config --cflags opencv`
+
+

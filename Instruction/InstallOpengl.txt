@@ -1,0 +1,6 @@
+install
+	sudo apt-get install freeglut3-dev
+
+run
+	Include <GL/glut.h> header in cpp code
+	link library using "-lGL -lGLU -lglut"

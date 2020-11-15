@@ -1,0 +1,10 @@
+
+install
+	sudo apt-get install g++
+	cd Project/Resource/Paho.mqtt.c
+	sudo make
+	sudo make install
+
+Run 
+	include <MQTTClient.h> header in c code
+	link the library as follows "-l paho-mqtt3c"
