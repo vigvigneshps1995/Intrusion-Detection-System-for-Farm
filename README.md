@@ -8,17 +8,17 @@
 The proposed approach uses a set of motion sensors, whose count depends upon the area of the farm, which triggers the selective cameras when the sensors detect a motion of an animal or a human. The camera captures the visuals of the moving animal which and tracks the moving object into the farm. Additionally, it transmits the visuals to MQTT server for image processing to identify the object of intrusion. Once the moving object is identified to be an animal, the intruder (animal) along with it’s geographic location (WITHOUT EMPLOYING A GPS SENSOR) in the farm is sent from server to the output display that is developed over OpenGL library.
 
 #### Architecture Diagram
-![Architecture.png](System Architecture.png)
-![Figure 1.png](Figure 1.png)
+![system_architecture.png](system_architecture.png)
+![figure_1.png](figure_1.png)
 
 #### Sequence Diagram
 ![sequence_diagram.png](sequence_diagram.png)
 
 #### Flow Chart
-![Flow Chart.png](Flow Chart.png) 
+![flow_chart.png](flow_chart.png) 
 
 #### Image Processing 
-![Image processing pipeline.png](Image processing pipeline.png)
+![image_processing_pipeline.png](image_processing_pipeline.png)
 
 
 #### Advantages
